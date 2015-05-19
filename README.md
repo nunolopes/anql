@@ -1,5 +1,8 @@
 # Annotated RDF
 
+This project contains the following directory structure :
+* **anql**: the adapted SWI-Prolog for Annotated RDF and AnQL
+
 The SWI Prolog source code of our prototype. This package has the following structure:
 
 * aRDF.pl - the generic framework 
