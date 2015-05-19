@@ -1,15 +1,12 @@
 # Annotated RDF
 
 This project contains the following directory structure :
-* **anql**: the adapted SWI-Prolog for Annotated RDF and AnQL
+* **ardf:** the generic Annotated RDF framework
+* **anql:** the adapted SWI-Prolog for Annotated RDF and AnQL
+* **domains:** the specification of domains
+* **rules:** the rulesets that are available
+* **tests:** the test files
 
-The SWI Prolog source code of our prototype. This package has the following structure:
-
-* aRDF.pl - the generic framework 
-* aRDFS_rules.rl - the RDF Schema rules (only one currently) to describe how to propagate the annotated values 
-* tRDF.pl - the temporal RDF specification 
-* fuzzyRDF.pl - the fuzzy RDF specification
-* tests - the test files 
 
 ## Running the examples
 
