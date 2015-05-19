@@ -1,2 +1,2 @@
-# anql
+# Anql
 Annotated SPARQL
