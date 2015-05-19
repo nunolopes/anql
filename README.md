@@ -2,10 +2,11 @@
 
 The SWI Prolog source code of our prototype. This package has the following structure:
 
-* aRDF/ aRDF.pl - the generic framework 
+* aRDF.pl - the generic framework 
 * aRDFS_rules.rl - the RDF Schema rules (only one currently) to describe how to propagate the annotated values 
 * tRDF.pl - the temporal RDF specification 
-* fuzzyRDF.pl - the fuzzy RDF specificationtests - the test files 
+* fuzzyRDF.pl - the fuzzy RDF specification
+* tests - the test files 
 
 ## Running the examples
 
