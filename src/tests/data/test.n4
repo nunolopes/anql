@@ -1,0 +1,43 @@
+# test document for the temporal RDF prototype
+ 
+@domain <http://anql.deri.org/domains#time> .
+
+@prefix foo: <http://example.org/foo#> .
+@prefix bar: <http://example.org/bar#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ardf#> .
+
+# foo:galway rdf:type bar:city .
+bar:lives rdfs:range bar:city .
+
+#bar:lives rdfs:domain foo:Employee .
+bar:lives rdfs:domain foo:Employee "[[25,40]]" .
+
+foo:Employee rdfs:subClassOf foo:Person. 
+
+# foo:Person rdfs:subClassOf foo:Agent .
+foo:Person rdfs:subClassOf foo:Agent "[[45,50]]" .
+
+
+bar:works rdfs:subPropertyOf foo:worksFor .
+foo:nuno bar:lives foo:galway .
+foo:nuno bar:works _:place .
+_:place bar:name "Agency" .
+
+foo:cork rdf:type bar:city "[[2,8], [10, 20]]" .
+
+foo:cork rdf:type bar:settlement "[[50,120]]" .
+
+foo:cow foo:likes bar:milk .
+
+foo:cork rdf:type bar:city "[[3,11], [15, 25]]" .
+
+bar:city rdfs:subClassOf bar:settlement .
+bar:settlement rdfs:subClassOf bar:placeToLive .
+
+
+# implicit typing tests: should check if inferred triples are valid.
+foo:worksFor rdfs:subPropertyOf _:prop1 .
+_:prop1 rdfs:domain foo:Worker .
+_:prop1 rdfs:range foo:Company .

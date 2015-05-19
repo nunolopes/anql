@@ -1,0 +1,18 @@
+# test document for the temporal RDF prototype
+ 
+@domain <http://anql.deri.org/domains#provenance> .
+
+@prefix foo: <http://example.org/ns#> .
+@prefix bar: <http://example.org/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+foo:alain   foaf:knows        bar:beckie      "[['alain.org']]"  .
+foo:alain   rdf:type          foo:Man         "[['alain.org']]"  .
+bar:beckie  foaf:knows        foo:alain       "[['beckie.org']]" .
+bar:beckie  rdf:type          foaf:Person     "[['beckie.org']]" .
+foaf:knows  rdfs:domain       foaf:Person     "[['foaf.com']]"   .
+foaf:knows  rdfs:range        foaf:Person     "[['foaf.com']]"   .
+foo:Man     rdfs:subClassOf   foaf:Person     "[['onto.org']]"   .
+# foo:alain   rdf:type          foaf:Man         .

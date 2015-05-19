@@ -1,0 +1,64 @@
+@domain <http://anql.deri.org/domains#ac> .
+
+@prefix : <http://urq.deri.org/enterprise#> . 
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+:storm a :Organisation :"[[mobrien]]" .
+:westCars a :Organisation       :"[[mobrien],[crmAdmin]]" .
+:westCars :client :storm        :"[[mobrien]]" .
+:westCars :commissions :wc001   :"[[mobrien]]" .
+:deri a :Organisation   :"[[smurphy],[crmAdmin]]" .
+:deri :client :storm    :"[[smurphy]]" .
+:deri :commissions :der001      :"[[smurphy]]" .
+:wc001 a :Project       :"[[mobrien]]" .
+:wc002 a :Project       :"[[mobrien]]" .
+:wc002 :name "wc002"    :"[[mobrien]]" .
+:der001 a :Project      :"[[smurphy]]" .
+:der002 a :Project      :"[[smurphy]]" .
+:der002 :name "der002"  :"[[smurphy]]" .
+:mobrien a :Employee    :"[[mobrien]]" .
+:mobrien :worksFor :storm       :"[[mobrien]]" .
+:smurphy a :Employee    :"[[smurphy]]" .
+:smurphy :worksFor :storm       :"[[smurphy]]" .
+:ts001 a :TimeSheet     :"[[mobrien]]" .
+:ts001 :refersTo :wc001         :"[[mobrien]]" .
+:ts001 :createdBy :mobrien      :"[[mobrien]]" .
+:ts002 a :TimeSheet     :"[[mobrien]]" .
+:ts002 :refersTo :wc002         :"[[mobrien]]" .
+:ts002 :createdBy :mobrien      :"[[mobrien]]" .
+:ts003 a :TimeSheet     :"[[smurphy]]" .
+:ts003 :refersTo :der001        :"[[smurphy]]" .
+:ts003 :createdBy :smurphy      :"[[smurphy]]" .
+:ts004 a :TimeSheet     :"[[smurphy]]" .
+:ts004 :refersTo :der002        :"[[smurphy]]" .
+:ts004 :createdBy :smurphy      :"[[smurphy]]" .
+:webWC001 a :Website .
+:webWC001 :forProject :wc001 .
+:webWC001 :hasParent :webWC .
+:webWC001 :forOrganisation :westCars .
+:webWC002 a :Website .
+:webWC002 :forProject :wc002 .
+:webWC002 :hasParent :webWC .
+:webWC002 :forOrganisation :westCars .
+:webWC002 :location "Customer/WestCars/WC002" .
+:webDER001 a :Website .
+:webDER001 :forProject :der001 .
+:webDER001 :hasParent :webDER .
+:webDER001 :forOrganisation :deri .
+:webDER002 a :Website .
+:webDER002 :forProject :der002 .
+:webDER002 :hasParent :webDER .
+:webDER002 :forOrganisation :deri .
+:webDER002 :location "Customer/DERI/DER002" .
+:webWC a :Website .
+:webWC :hasParent :customer .
+:webDER a :Website      :"[[nl]]" .
+:webDER :hasParent :customer .
+:customer a :Website    :"[[sk]]" .
+:jb a :Employee         :"[[crmAdmin]]" .
+:jb :worksFor :westCars         :"[[crmAdmin]]" .
+:js a :Employee         :"[[crmAdmin]]" .
+:js :worksFor :westCars         :"[[crmAdmin]]" .
+:jd a :Employee         :"[[crmAdmin]]" .
+:jd :worksFor :deri     :"[[crmAdmin]]" .

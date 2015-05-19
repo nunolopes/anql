@@ -1,0 +1,16 @@
+# test document for the AC RDF prototype
+ 
+@domain <http://anql.deri.org/domains#ac> .
+
+@prefix foo: <http://example.org/foo#> .
+@prefix bar: <http://example.org/bar#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ardf#> .
+
+
+foo:nuno rdf:type foo:Employee "[[nl],[sk]]" .
+
+bar:lives rdfs:range bar:city "[[nl,sk]]".
+
+

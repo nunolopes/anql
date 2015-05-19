@@ -1,0 +1,27 @@
+# Alain Prost example for temporal domains
+
+# query example:
+# rdf(X, rdf:type, ex:SportsCarDriver, [1975, 1985])
+
+@domain <http://anql.deri.org/domains#time+provenance> .
+
+@prefix ex: <http://example.org/ardf#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+ex:jawedKarim ex:worksFor ex:youtube "[( [[2004,2010]], [['wiki.com']] )]" .
+ex:jawedKarim ex:worksFor ex:paypal "[( [[2000,2003]], [['wiki.com']] )]" .
+ex:youtubeEmp rdfs:subClassOf ex:googleEmp "[( [[2005,2011]], [['wiki.com']] )]" .
+
+ex:paypalEmp owl:hasValue ex:paypal           "[( [[inf,sup]], [['workont.org']] )]" .
+ex:paypalEmp owl:onProperty ex:worksFor       "[( [[inf,sup]], [['workont.org']] )]" .
+ex:youtubeEmp owl:hasValue ex:youtube         "[( [[inf,sup]], [['workont.org']] )]" .
+ex:youtubeEmp owl:onProperty ex:worksFor      "[( [[inf,sup]], [['workont.org']] )]" .
+ex:youtube owl:differentFrom ex:paypal        "[( [[inf,sup]], [['workont.org']] )]" .
+ex:youtubeEmp owl:disjointWith ex:paypalEmp   "[( [[inf,sup]], [['workont.org']] )]" .
+
+ex:worksFor rdf:type owl:FunctionalProperty   "[( [[2003,2009]], [['evil.org']] )]" .
+
+ex:jawedKarim ex:worksFor ex:paypal           "[( [[2002,2008]], [['evil.com']] )]" .

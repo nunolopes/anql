@@ -1,0 +1,21 @@
+# test document for the temporal RDF prototype
+ 
+@domain <http://anql.deri.org/domains#time> .
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/> .
+
+
+:nuno   :worksFor :DERI      "[[2008,2010]]" .
+:nuno   :ownsCar  :fiat      "[[2005,2009]]" .
+
+:axel   :worksFor :DERI      "[[2006,2010]]" .
+:axel   :ownsCar  :peugeot   "[[2003,2010]]" .
+
+:worksFor  rdfs:domain  foaf:Person .
+:worksFor  rdfs:range   :Company .
+
+:owns   rdfs:domain  foaf:Person .
+:owns   rdfs:range   :Car .

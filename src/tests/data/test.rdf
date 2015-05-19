@@ -1,0 +1,66 @@
+# test document for the temporal RDF prototype
+ 
+@domain <http://anql.deri.org/domains#time> .
+
+@prefix foo: <http://example.org/foo#> .
+@prefix bar: <http://example.org/bar#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ardf#> .
+
+#foo:galway rdf:type bar:city .
+bar:lives rdfs:range bar:city .
+
+#bar:lives rdfs:domain foo:Employee .
+_:b0 a rdf:Statement .
+_:b0 rdf:subject bar:lives .
+_:b0 rdf:predicate rdfs:domain .
+_:b0 rdf:object foo:Employee .
+_:b0 ex:tlabel "[[25,40]]" .
+
+foo:Employee rdfs:subClassOf foo:Person. 
+
+# foo:Person rdfs:subClassOf foo:Agent .
+_:b00 a rdf:Statement .
+_:b00 rdf:subject foo:Person .
+_:b00 rdf:predicate rdfs:subClassOf .
+_:b00 rdf:object foo:Agent .
+_:b00 ex:tlabel "[[45,50]]" .
+
+
+bar:works rdfs:subPropertyOf foo:worksFor .
+foo:nuno bar:lives foo:galway .
+foo:nuno bar:works _:place .
+_:place bar:name "Agency" .
+
+_:b1 rdf:type rdf:Statement .
+_:b1 rdf:subject foo:cork .
+_:b1 rdf:predicate rdf:type .
+_:b1 rdf:object bar:city .
+_:b1 ex:tlabel "[[2,8], [10, 20]]" .
+
+_:b2 rdf:type rdf:Statement .
+_:b2 rdf:subject foo:cork .
+_:b2 rdf:predicate rdf:type .
+_:b2 rdf:object bar:settlement .
+_:b2 ex:tlabel "[[50,120]]" .
+
+_:b3 rdf:type rdf:Statement .
+_:b3 rdf:subject foo:cow .
+_:b3 rdf:predicate foo:likes .
+_:b3 rdf:object bar:milk .
+
+_:b4 rdf:type rdf:Statement .
+_:b4 rdf:subject foo:cork .
+_:b4 rdf:predicate rdf:type .
+_:b4 rdf:object bar:city .
+_:b4 ex:tlabel "[[3,11], [15, 25]]" .
+
+bar:city rdfs:subClassOf bar:settlement .
+bar:settlement rdfs:subClassOf bar:placeToLive .
+
+
+# implicit typing tests: should check if inferred triples are valid.
+foo:worksFor rdfs:subPropertyOf _:prop1 .
+_:prop1 rdfs:domain foo:Worker .
+_:prop1 rdfs:range foo:Company .

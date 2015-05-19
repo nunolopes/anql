@@ -1,0 +1,20 @@
+# test document for the temporal RDF prototype
+ 
+@domain <http://anql.deri.org/domains#time> .
+
+@prefix foo: <http://example.org/ns#> .
+@prefix bar: <http://example.org/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ardf#> .
+
+ 
+_:b1 rdf:type rdf:Statement .
+_:b1 rdf:subject foo:cork .
+_:b1 rdf:predicate rdf:type .
+_:b1 rdf:object bar:city .
+_:b1 ex:tlabel "[[2,8], [10, 20]]" .
+
+foo:cork rdf:type bar:settlement .
+
+bar:city rdfs:subClassOf bar:settlement .

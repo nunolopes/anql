@@ -1,0 +1,13 @@
+# Alain Prost example for temporal domains
+
+@domain <http://anql.deri.org/domains#time> .
+
+@prefix dom: <http://anql.deri.org/domains#time> .
+@prefix ex: <http://example.org/ardf#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:AlainProst rdf:type ex:F1Driver "[[1981,1983]]".
+
+

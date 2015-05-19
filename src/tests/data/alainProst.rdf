@@ -1,0 +1,67 @@
+# Alain Prost example for temporal domains
+
+# query example:
+# rdf(X, rdf:type, ex:SportsCarDriver, [1975, 1985])
+
+@domain <http://anql.deri.org/domains#time> .
+
+@prefix ex: <http://example.org/ardf#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+_:b1 rdf:type rdf:Statement .
+_:b1 rdf:subject ex:AlainProst .
+_:b1 rdf:predicate rdf:type .
+_:b1 rdf:object ex:RenaultF1Driver .
+_:b1 ex:tlabel "[[1981,1983]]" .
+
+_:b2 rdf:type rdf:Statement .
+_:b2 rdf:subject ex:AlainProst .
+_:b2 rdf:predicate rdf:type .
+_:b2 rdf:object ex:McLarenF1Driver .
+_:b2 ex:tlabel "[[1980,1980], [1984,1989]]" .
+
+_:b3 rdf:type rdf:Statement .
+_:b3 rdf:subject ex:AlainProst .
+_:b3 rdf:predicate rdf:type .
+_:b3 rdf:object ex:FerrariF1Driver .
+_:b3 ex:tlabel "[[1990,1991]]" .
+
+_:b4 rdf:type rdf:Statement .
+_:b4 rdf:subject ex:AlainProst .
+_:b4 rdf:predicate rdf:type .
+_:b4 rdf:object ex:WilliamsF1Driver .
+_:b4 ex:tlabel "[[1993,1993]]" .
+
+
+_:b5 rdf:type rdf:Statement .
+_:b5 rdf:subject ex:McLarenF1Driver .
+_:b5 rdf:predicate rdfs:subClassOf .
+_:b5 rdf:object ex:F1Driver .
+_:b5 ex:tlabel "[[1966,2010]]" .
+
+_:b6 rdf:type rdf:Statement .
+_:b6 rdf:subject ex:RenaultF1Driver .
+_:b6 rdf:predicate rdfs:subClassOf .
+_:b6 rdf:object ex:F1Driver .
+_:b6 ex:tlabel "[[1977,1985], [2001,2009]]" .
+
+_:b7 rdf:type rdf:Statement .
+_:b7 rdf:subject ex:FerrariF1Driver .
+_:b7 rdf:predicate rdfs:subClassOf .
+_:b7 rdf:object ex:F1Driver .
+_:b7 ex:tlabel "[[1950,2010]]" .
+
+
+_:b8 rdf:type rdf:Statement .
+_:b8 rdf:subject ex:WilliamsF1Driver .
+_:b8 rdf:predicate rdfs:subClassOf .
+_:b8 rdf:object ex:F1Driver .
+_:b8 ex:tlabel "[[1976,2010]]" .
+
+
+
+ex:F1Driver rdfs:subClassOf ex:SportsCarDriver .
+
+

@@ -1,0 +1,25 @@
+# Alain Prost example for temporal domains
+
+# query example:
+# rdf(X, rdf:type, ex:SportsCarDriver, [1975, 1985])
+
+@domain <http://anql.deri.org/domains#time> .
+
+@prefix ex: <http://example.org/ardf#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+ex:AlainProst rdf:type ex:RenaultF1Driver "[[1981,1983]]" .
+ex:AlainProst rdf:type ex:McLarenF1Driver "[[1980,1980], [1984,1989]]" .
+ex:AlainProst rdf:type ex:FerrariF1Driver "[[1990,1991]]" .
+ex:AlainProst rdf:type ex:WilliamsF1Driver "[[1993,1993]]" .
+
+ex:McLarenF1Driver rdfs:subClassOf ex:F1Driver "[[1966,2010]]" .
+ex:RenaultF1Driver rdfs:subClassOf ex:F1Driver "[[1977,1985], [2001,2009]]" .
+ex:FerrariF1Driver rdfs:subClassOf ex:F1Driver "[[1950,2010]]" .
+ex:WilliamsF1Driver rdfs:subClassOf ex:F1Driver "[[1976,2010]]" .
+
+ex:F1Driver rdfs:subClassOf ex:SportsCarDriver .
+
+

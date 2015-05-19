@@ -1,0 +1,17 @@
+# test document for the temporal RDF prototype
+ 
+@domain <http://anql.deri.org/domains#fuzzy> .
+
+@prefix foo: <http://example.org/ns#> .
+@prefix bar: <http://example.org/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ardf#> .
+
+foo:cork rdf:type bar:city 0.7 .
+foo:cork rdf:type bar:settlement 0.6 .
+foo:cork foo:population 119418 0.8 .
+
+foo:galway rdf:type bar:city 0.8 .
+
+bar:city rdfs:subClassOf bar:settlement .

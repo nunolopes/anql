@@ -1,0 +1,82 @@
+# Alain Prost example for temporal domains
+
+# query example:
+# rdf(X, rdf:type, ex:SportsCarDriver, [1975, 1985])
+
+@domain <http://anql.deri.org/domains#time> .
+
+@prefix ex: <http://example.org/ardf#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:AlainProst rdf:type ex:RenaultF1Driver "[[1981,1983]]" .
+ex:AlainProst rdf:type ex:McLarenF1Driver "[[1980,1980], [1984,1989]]" .
+ex:AlainProst rdf:type ex:FerrariF1Driver "[[1990,1991]]" .
+ex:AlainProst rdf:type ex:WilliamsF1Driver "[[1993,1993]]" .
+
+ex:McLarenF1Driver rdfs:subClassOf ex:F1Driver "[[1966,2010]]" .
+ex:RenaultF1Driver rdfs:subClassOf ex:F1Driver "[[1977,1985], [2001,2009]]" .
+ex:FerrariF1Driver rdfs:subClassOf ex:F1Driver "[[1950,2010]]" .
+
+ex:WilliamsF1Driver rdfs:subClassOf ex:F1Driver "[[1976,2010]]" .
+
+ex:F1Driver rdfs:subClassOf ex:SportsCarDriver .
+
+
+## ========================================
+## 
+
+ex:DrivesFor rdf:type owl:FunctionalProperty .
+ex:AlainProst ex:DrivesFor ex:R1 "[[1981,1983]]" .
+ex:AlainProst ex:DrivesFor ex:R2 .
+
+ex:Driver rdf:type owl:InverseFunctionalProperty .
+ex:AlainProst  ex:Driver ex:Renault "[[1981,1983]]" .
+ex:AlainProst2 ex:Driver ex:Renault .
+
+
+## RDFP3
+ex:loves rdf:type owl:SymmetricProperty .
+ex:AlainProst  ex:loves ex:SportsCar  .
+
+
+ex:worksFor rdf:type owl:TransitiveProperty .
+ex:AlainProst ex:worksFor ex:RenaultF1 "[[1981,1983]]" .
+ex:RenaultF1 ex:worksFor ex:Renault .
+
+
+## RDFP8ax
+ex:worksFor owl:inverseOf ex:forWorks .
+ex:AlainProst ex:forWorks ex:RenaultF1 "[[1981,1983]]" .
+
+## RDFP9
+ex:R1 rdf:type rdfs:Class .
+ex:R1 owl:sameAs ex:RenaultF1 .
+
+## RDFP10
+ex:worksFor2 rdf:type rdf:Property .
+ex:worksFor2 owl:sameAs ex:worksFor .
+
+ex:R2 owl:equivalentClass ex:R1 .
+
+
+ex:F1Driver rdfs:subClassOf ex:SportsCarDriver .
+ex:SportsCarDriver rdfs:subClassOf ex:F1Driver .
+
+
+ex:worksFor owl:equivalentProperty ex:worksFor3 .
+
+ex:worksFor4 rdfs:subPropertyOf ex:worksFor5 .
+ex:worksFor5 rdfs:subPropertyOf ex:worksFor4 .
+
+
+_:b1 owl:hasValue ex:RenaultF1 .
+_:b1 owl:onProperty ex:worksFor6 .
+ex:AlainProst6 ex:worksFor6 ex:RenaultF1 "[[1981,1983]]" .
+
+_:b2 owl:hasValue ex:RenaultF11 .
+_:b2 owl:onProperty ex:worksFor7 .
+ex:AlainProst7 rdf:type _:b3 .
+
+
