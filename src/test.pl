@@ -1,4 +1,4 @@
-:- use_module('core/aRDF').
+:- use_module('ardf/aRDF').
 :- use_module('tests/test_anql').
 :- initialization(run_tests).
 

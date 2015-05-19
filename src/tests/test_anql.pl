@@ -1,6 +1,6 @@
 :- module(test_anql, [test/3, check_result/2]).
-:- use_module('core/aRDF').
-:- use_module('core/sparql').
+:- use_module('ardf/aRDF').
+:- use_module('anql/sparql').
 
 % ----------------------------------
 % Testcases  -- auxiliary predicates
