@@ -1,5 +1,7 @@
 # Annotated RDF
 
+Please visit the [project webpage](http://nunolopes.github.io/anql/).
+
 This project contains the following directory structure :
 * **ardf:** the generic Annotated RDF framework
 * **anql:** the adapted SWI-Prolog for Annotated RDF and AnQL
