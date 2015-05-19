@@ -1,4 +1,4 @@
-# Anql
+# Annotated RDF
 
 The SWI Prolog source code of our prototype. This package has the following structure:
 
@@ -47,5 +47,5 @@ quad('http://example.org/ardf#audiTT', 'http://www.w3.org/1999/02/22-rdf-syntax-
 ...
 ```
 
-# AnQL
+# AnQL - Annotated SPARQL
 AnQL is an extension of the SPARQL query language to query Annotated RDF. The AnQL prototype is currently under development and the partial implementation of the language is available. 
